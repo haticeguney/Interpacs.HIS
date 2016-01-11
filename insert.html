@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body >
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="JS/InitWebApi.js"></script>
+    <script src="JS/TitleJSAction.js"></script>
+    <script src="JS/TitleSubJSAction.js"></script>
+    <script src="JS/DepartmentJSAction.js"></script>
+    <script src="JS/DepartmentSubJSAction.js"></script>
+    <script>
+
+        function insertClick() {
+
+        var titleinsert = new TitleJSAction();
+        titleinsert.Code = $("#TitleCode").val();
+        titleinsert.Name = $("#TitleName").val();
+
+
+        var reqData = new JSRequest();
+        reqData.EntityObject = titleinsert;
+        reqData.UserID = 345;
+        //reqData.ID = 847847;
+
+            
+        var titleinsertAct = new TitleJSActionJsAction();
+        titleinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
+
+
+        function succesInsertCallback(data) {
+           var aa = JSON.parse(data);
+           alert("İşlem başarılı.");
+        };
+        function errorInsertCallback(data) {
+           alert("İşlem hatalı.");
+        };
+
+
+            //  
+
+
+       
+
+    }
+        function insertClick2() {
+
+            var titleinsert = new TitleSubJSAction();
+            titleinsert.Code = $("#TitleID").val();
+            titleinsert.Code = $("#TitleCode").val();
+            titleinsert.Name = $("#TitleName").val();
+
+
+            var reqData = new JSRequest();
+            reqData.EntityObject = titleinsert;
+            reqData.UserID = 345;
+            //reqData.ID = 847847;
+
+
+            var titleinsertAct = new TitleSubJSActionJsAction();
+            titleinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
+
+
+            function succesInsertCallback(data) {
+                var aa = JSON.parse(data);
+                alert("İşlem başarılı.");
+            };
+            function errorInsertCallback(data) {
+                alert("İşlem hatalı.");
+            };
+        }
+        function insertClick3() {
+
+            var departmentinsert = new DepartmentJSAction();
+ 
+            departmentinsert.Name = $("#DepartmentName").val();
+
+
+            var reqData = new JSRequest();
+            reqData.EntityObject = departmentinsert;
+            reqData.UserID = 345;
+            //reqData.ID = 847847;
+
+
+            var departmentinsertAct = new DepartmentJSActionJsAction();
+            departmentinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
+
+
+            function succesInsertCallback(data) {
+                var aa = JSON.parse(data);
+                alert("İşlem başarılı.");
+            };
+            function errorInsertCallback(data) {
+                alert("İşlem hatalı.");
+            };
+        }
+        function insertClick3() {
+
+            var departmentinsert = new DepartmentSubJSAction();
+
+            departmentinsert.Name = $("#DepartmentName").val();
+
+
+            var reqData = new JSRequest();
+            reqData.EntityObject = departmentinsert;
+            reqData.UserID = 345;
+            //reqData.ID = 847847;
+
+
+            var departmentinsertAct = new DepartmentJSActionJsAction();
+            departmentinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
+
+
+            function succesInsertCallback(data) {
+                var aa = JSON.parse(data);
+                alert("İşlem başarılı.");
+            };
+            function errorInsertCallback(data) {
+                alert("İşlem hatalı.");
+            };
+        }
+    </script>
+
+    
+    <input placeholder="TitleID" id="TitleID" type="text" />    
+    <input placeholder="TitleCode" id="TitleCode" type="text" />
+    <input placeholder="TitleName" id="TitleName" type="text" />
+    
+    <input id="Button1" type="button" value="Insert Title" onclick="insertClick();" />
+    <input id="Button2" type="button" value="Insert Title Sub" onclick="insertClick2();" />
+     <br />
+    <br />
+    <br />
+    <input placeholder="DepartmentName" id="DepartmentName" type="text" />
+    <input id="Button2" type="button" value="Insert Department" onclick="insertClick3();" />
+    
+
+
+</body>
+</html>
