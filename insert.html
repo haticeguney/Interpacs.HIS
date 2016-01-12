@@ -96,21 +96,21 @@
                 alert("İşlem hatalı.");
             };
         }
-        function insertClick3() {
+        function insertClick4() {
 
-            var departmentinsert = new DepartmentSubJSAction();
+            var subdepartmentinsert = new DepartmentSubJSAction();
 
-            departmentinsert.Name = $("#DepartmentName").val();
+            departmentinsert.Name = $("#DepartmentSubName").val();
 
 
             var reqData = new JSRequest();
-            reqData.EntityObject = departmentinsert;
+            reqData.EntityObject = subdepartmentinsert;
             reqData.UserID = 345;
             //reqData.ID = 847847;
 
 
-            var departmentinsertAct = new DepartmentJSActionJsAction();
-            departmentinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
+            var subdepartmentinsertAct = new DepartmentSubJSActionJsAction();
+            subdepartmentinsertAct.Insert(reqData, succesInsertCallback, errorInsertCallback);
 
 
             function succesInsertCallback(data) {
